@@ -47,7 +47,7 @@ namespace Schools.Data.Utils
                         User user;
                         using (var dbContext = new ApplicationDbContext())
                         {
-                            if ((user = dbContext.Users.SingleOrDefault(u => u.Name == username)) != null)
+                            if ((user = dbContext.Users.SingleOrDefault(u => u.Email == username)) != null)
                             {
                                 string computedToken = GenerateToken(username, user.PasswordHash, ip, userAgent, ticks);
                                 result = (token == computedToken);
