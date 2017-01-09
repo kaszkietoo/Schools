@@ -1,10 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Schools.Data.Entities
 {
     public class User
     {
+        public User()
+        {
+
+        }
+
         public User(string name, string surname, string email)
         {
             EmailConfirmed = false;
@@ -17,6 +23,12 @@ namespace Schools.Data.Entities
         public long Id { get; protected set; }
         [Required]
         public string Name { get; protected set; }
+
+        internal void SetPasswordHash(string passwordHash)
+        {
+            PasswordHash = passwordHash;
+        }
+
         [Required]
         public string Surname { get; protected set; }
         [Required]

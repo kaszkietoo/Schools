@@ -1,6 +1,6 @@
 namespace Schools.Data.Migrations
-{
-    using System.Data.Entity.Migrations;
+{    
+    using System.Data.Entity.Migrations;    
 
     internal sealed class Configuration : DbMigrationsConfiguration<Schools.Data.ApplicationDbContext>
     {

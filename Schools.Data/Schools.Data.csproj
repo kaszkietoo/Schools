@@ -52,6 +52,7 @@
     <Compile Include="ApplicationDbContext.cs" />
     <Compile Include="Entities\School.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Utils\SecurityManager.cs" />
     <Compile Include="Migrations\201701091333122_InitialMigration.cs" />
     <Compile Include="Migrations\201701091333122_InitialMigration.Designer.cs">
       <DependentUpon>201701091333122_InitialMigration.cs</DependentUpon>
