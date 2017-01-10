@@ -8,7 +8,8 @@
     <div class="navbar navbar-default">
         <div class="navbar-header">
             <ul class="nav navbar-nav">
-                <li class="navbar-brand"><a ui-sref="login">Zaloguj się</a></li>
+                <li class="navbar-brand" ng-show="!isUserAuthenticated"><a ui-sref="login">Zaloguj się</a></li>
+                <li class="navbar-brand" ng-show="isUserAuthenticated">Witaj {{username}}<input ng-click="logout()" type="submit" value="Wyloguj się" /></li>
                 <li class="navbar-brand"><a ui-sref="about">O aplikacji i autorach</a></li>
             </ul>
             <ui-view></ui-view>

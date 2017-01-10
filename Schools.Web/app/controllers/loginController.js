@@ -4,7 +4,9 @@
 
         $http.get('/account/login?token=' + SecurityManager.generate(username, password)).then(function () {
             $scope.username = ""; $scope.password = "";
-            localStorage['isAuthenticated'] = true;
+            $scope.$emit('userAuthenticated');
+            $scope.isUserAuthenticated = true;
+            localStorage["user.isAuthenticated"] = true;
             $state.go('about');
 
         }, function () { console.log('error') })
