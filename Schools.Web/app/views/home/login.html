@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <div ng-controller="loginController">
+        <form>
+            <label>Nazwa użytkownika: <input type="text" ng-model="username"/></label><br/>
+            <label>Hasło: <input type="password" ng-model="password" /></label>
+            <input type="submit" value="Zaloguj się" ng-click="login(username, password)" />
+        </form>
+    </div>
+</body>
+</html>
