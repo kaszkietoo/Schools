@@ -13,6 +13,22 @@ schoolsModule.config(function ($stateProvider) {
         templateUrl: '/app/views/home/about.html'
     };
 
+    var schoolListState = {
+        name: 'schools',
+        url: '/admin/schools',
+        templateUrl: '/app/views/admin/schools/list.html',
+        params: { needsAdmin: true }
+    };
+
+    var addSchoolsState = {
+        name: 'addSchool',
+        url: '/admin/schools/add',
+        templateUrl: '/app/views/admin/schools/add.html',
+        params: { needsAdmin: true }
+    };
+
     $stateProvider.state(loginState);
     $stateProvider.state(aboutState);
+    $stateProvider.state(schoolListState);
+    $stateProvider.state(addSchoolsState);
 });

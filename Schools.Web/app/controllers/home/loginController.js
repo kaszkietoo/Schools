@@ -4,7 +4,12 @@
 
         $http.get('/account/login?token=' + SecurityManager.generate(username, password)).then(function (data) {
             $scope.username = ""; $scope.password = "";
-            $scope.$emit('userAuthenticated');                       
+            $scope.$emit('userAuthenticated');            
+
+            if (data.data === 'Admin') {                
+                $state.go('schools');
+            }
+
 
         }, function () {
             $scope.username = ""; $scope.password = "";

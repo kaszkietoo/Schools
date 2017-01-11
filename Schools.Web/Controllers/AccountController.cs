@@ -11,8 +11,8 @@ namespace Schools.Web.Controllers
         {
             using (var userRepository = new UserRepository())
             {
-                return Json(userRepository.GetAccountType(User.Identity.Name), JsonRequestBehavior.AllowGet);
+                return Json(userRepository.GetAccountType(User.Identity.Name).ToString(), JsonRequestBehavior.AllowGet);
             }            
-        }
+        }        
     }
 }

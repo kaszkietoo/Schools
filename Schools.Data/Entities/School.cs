@@ -4,19 +4,35 @@ namespace Schools.Data.Entities
 {
     public class School
     {
+        public School(string name, string nip, string street, string number, string postalCode, string city, string email, string telephone)
+        {
+            Name = name;
+            NIP = nip;
+            Street = street;
+            Number = number;
+            PostalCode = postalCode;
+            City = city;
+            Email = email;
+            Telephone = telephone;
+        }
+
         [Key]
-        public long Id { get; set; }
+        public long Id { get; protected set; }
         [Required]
-        public string Name { get; set; }
+        public string Name { get; protected set; }
         [Required]
-        public string NIP { get; set; }
+        public string NIP { get; protected set; }
         [Required]
-        public string Street { get; set; }
+        public string Street { get; protected set; }
         [Required]
-        public string Number { get; set; }
+        public string Number { get; protected set; }
         [Required]
-        public string PostalCode { get; set; }
+        public string PostalCode { get; protected set; }
         [Required]
-        public string City { get; set; }
+        public string City { get; protected set; }
+        [Required]
+        public string Email { get; protected set; }
+        [Required]
+        public string Telephone { get; protected set; }
     }
 }

@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <div ng-controller="addSchoolController">
+        Dodaj szkołę
+        <form name="schoolForm" ng-submit="addSchool(school)" novalidate>
+            <label>Nazwa szkoły:</label> <input name="name" required type="text" ng-model="school.name" /><br />
+            <p ng-show="schoolForm.name.$invalid">Musisz podać nazwę</p>
+            <label>NIP: </label><input name="nip" required type="text" ng-model="school.NIP" /><br />
+            <p ng-show="schoolForm.nip.$invalid">Musisz podać NIP</p>
+            <label>Ulica: </label><input name="street" required type="text" ng-model="school.street" /><br />
+            <p ng-show="schoolForm.street.$invalid">Musisz podać ulicę</p>
+            <label>Numer:</label> <input name="number" required type="text" ng-model="school.number" /><br />
+            <p ng-show="schoolForm.number.$invalid">Musisz podać numer</p>
+            <label>Kod pocztowy: </label><input name="postalCode" required type="text" ng-model="school.postalCode" /><br />
+            <p ng-show="schoolForm.postalCode.$invalid">Musisz podać kod pocztowy</p>
+            <label>Miejscowość: </label><input name="city" required type="text" ng-model="school.city" /><br />
+            <p ng-show="schoolForm.city.$invalid">Musisz podać miasto</p>
+            <label>Email:</label> <input name="email" required type="email" ng-model="school.email" /><br />
+            <p ng-show="schoolForm.email.$invalid">Musisz podać poprawny email</p>
+            <label>Telephone: </label><input name="telephone" required type="text" ng-model="school.telephone" /><br />
+            <p ng-show="schoolForm.telephone.$invalid">Musisz podać telefon</p>
+            <input type="submit" ng-disabled="schoolForm.$invalid" value="Dodaj" />
+        </form>
+    </div>    
+</body>
+</html>

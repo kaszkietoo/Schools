@@ -51,12 +51,18 @@
   <ItemGroup>
     <Compile Include="AccountType.cs" />
     <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="DTO\SchoolDTO.cs" />
     <Compile Include="Entities\School.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Migrations\201701111005022_AccountTypeAddedToUser.cs" />
     <Compile Include="Migrations\201701111005022_AccountTypeAddedToUser.Designer.cs">
       <DependentUpon>201701111005022_AccountTypeAddedToUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701111523474_SchoolEntityUpdated.cs" />
+    <Compile Include="Migrations\201701111523474_SchoolEntityUpdated.Designer.cs">
+      <DependentUpon>201701111523474_SchoolEntityUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\SchoolRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Utils\SecurityManager.cs" />
     <Compile Include="Migrations\201701091333122_InitialMigration.cs" />
@@ -76,6 +82,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701111005022_AccountTypeAddedToUser.resx">
       <DependentUpon>201701111005022_AccountTypeAddedToUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701111523474_SchoolEntityUpdated.resx">
+      <DependentUpon>201701111523474_SchoolEntityUpdated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
