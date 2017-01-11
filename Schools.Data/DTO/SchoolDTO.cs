@@ -16,5 +16,6 @@ namespace Schools.Data.DTO
         public string City { get; set; }
         public string Email { get; set; }
         public string Telephone { get; set; }
+        public string Director { get; set; }
     }
 }

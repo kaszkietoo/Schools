@@ -22,8 +22,10 @@
             <p ng-show="schoolForm.city.$invalid">Musisz podać miasto</p>
             <label>Email:</label> <input name="email" required type="email" ng-model="school.email" /><br />
             <p ng-show="schoolForm.email.$invalid">Musisz podać poprawny email</p>
-            <label>Telephone: </label><input name="telephone" required type="text" ng-model="school.telephone" /><br />
+            <label>Telefon: </label><input name="telephone" required type="text" ng-model="school.telephone" /><br />
             <p ng-show="schoolForm.telephone.$invalid">Musisz podać telefon</p>
+            <label>Dyrektor: </label><input name="director" required type="text" ng-model="school.director" /><br />
+            <p ng-show="schoolForm.director.$invalid">Musisz podać nazwisko dyrektora</p>
             <input type="submit" ng-disabled="schoolForm.$invalid" value="Dodaj" />
         </form>
     </div>    

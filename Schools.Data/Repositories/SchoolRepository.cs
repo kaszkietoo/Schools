@@ -14,7 +14,7 @@ namespace Schools.Data.Repositories
 
         public void Add(SchoolDTO school)
         {
-            var addedSchool = _dbContext.Schools.Add(new Entities.School(school.Name, school.NIP, school.Street, school.Number, school.PostalCode, school.City, school.Email, school.Telephone));
+            var addedSchool = _dbContext.Schools.Add(new Entities.School(school.Name, school.NIP, school.Street, school.Number, school.PostalCode, school.City, school.Email, school.Telephone, school.Director));
             _dbContext.SaveChanges();
         }
 

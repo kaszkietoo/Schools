@@ -4,7 +4,7 @@ namespace Schools.Data.Entities
 {
     public class School
     {
-        public School(string name, string nip, string street, string number, string postalCode, string city, string email, string telephone)
+        public School(string name, string nip, string street, string number, string postalCode, string city, string email, string telephone, string director)
         {
             Name = name;
             NIP = nip;
@@ -14,6 +14,7 @@ namespace Schools.Data.Entities
             City = city;
             Email = email;
             Telephone = telephone;
+            Director = director;
         }
 
         [Key]
@@ -34,5 +35,7 @@ namespace Schools.Data.Entities
         public string Email { get; protected set; }
         [Required]
         public string Telephone { get; protected set; }
+        [Required]
+        public string Director { get; set; }
     }
 }
