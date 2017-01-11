@@ -2,14 +2,13 @@
     $scope.login = function (username, password) {        
 
 
-        $http.get('/account/login?token=' + SecurityManager.generate(username, password)).then(function () {
+        $http.get('/account/login?token=' + SecurityManager.generate(username, password)).then(function (data) {
             $scope.username = ""; $scope.password = "";
-            $scope.$emit('userAuthenticated');
-            $scope.isUserAuthenticated = true;
-            localStorage["user.isAuthenticated"] = true;
-            $state.go('about');
+            $scope.$emit('userAuthenticated');                       
 
-        }, function () { console.log('error') })
+        }, function () {
+            $scope.username = ""; $scope.password = "";
+        })
 
         
     }

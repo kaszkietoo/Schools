@@ -11,7 +11,7 @@ namespace Schools.Data.Migrations
 
         protected override void Seed(Schools.Data.ApplicationDbContext context)
         {
-            
+                                                
         }
     }
 }

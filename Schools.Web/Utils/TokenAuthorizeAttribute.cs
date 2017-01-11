@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
@@ -28,7 +30,15 @@ namespace Schools.Web.Utils
             {                
                 HttpRequestBase request = actionContext.RequestContext.HttpContext.Request;
                 string token = request.Params[_securityToken];
-                return SecurityManager.IsTokenValid(token, CommonManager.GetIP(request), request.UserAgent);
+                bool isTokenValid = SecurityManager.IsTokenValid(token, CommonManager.GetIP(request), request.UserAgent);
+                if (isTokenValid)
+                {
+                    string key = Encoding.UTF8.GetString(Convert.FromBase64String(token));
+                    string[] parts = key.Split(new char[] { ':' });
+                    actionContext.HttpContext.User = new UserPrincipal(new UserIdentity(parts[1]));                    
+                }
+                    
+                return isTokenValid;
             }
             catch (Exception)
             {

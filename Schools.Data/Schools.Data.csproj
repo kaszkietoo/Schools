@@ -49,9 +49,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountType.cs" />
     <Compile Include="ApplicationDbContext.cs" />
     <Compile Include="Entities\School.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Migrations\201701111005022_AccountTypeAddedToUser.cs" />
+    <Compile Include="Migrations\201701111005022_AccountTypeAddedToUser.Designer.cs">
+      <DependentUpon>201701111005022_AccountTypeAddedToUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Utils\SecurityManager.cs" />
     <Compile Include="Migrations\201701091333122_InitialMigration.cs" />
     <Compile Include="Migrations\201701091333122_InitialMigration.Designer.cs">
@@ -67,6 +73,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201701091333122_InitialMigration.resx">
       <DependentUpon>201701091333122_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701111005022_AccountTypeAddedToUser.resx">
+      <DependentUpon>201701111005022_AccountTypeAddedToUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

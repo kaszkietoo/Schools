@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Schools.Data.Entities
 {
@@ -11,12 +9,13 @@ namespace Schools.Data.Entities
 
         }
 
-        public User(string name, string surname, string email)
+        public User(string name, string surname, string email, AccountType accountType)
         {
             EmailConfirmed = false;
             Name = name;
             Surname = surname;
             Email = email;
+            AccountType = accountType;
         }
 
         [Key]
@@ -33,6 +32,7 @@ namespace Schools.Data.Entities
         public string Surname { get; protected set; }
         [Required]
         public string Email { get; protected set; }
+        public AccountType AccountType { get; protected set; }
         public string PasswordHash { get; protected set; }
         public string ResetPasswordCode { get; protected set; }
         public string EmailConfirmationCode { get; protected set; }

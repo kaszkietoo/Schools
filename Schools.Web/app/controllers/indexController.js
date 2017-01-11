@@ -6,20 +6,18 @@
         {
         $scope.isUserAuthenticated = true;
         $scope.username = SecurityManager.username;
-        }   
-        
-
-    console.log($scope.isUserAuthenticated);
+        }    
 
     $scope.$on('userAuthenticated', function () {        
         $scope.isUserAuthenticated = true;
         $scope.username = SecurityManager.username;
+        localStorage["user.isAuthenticated"] = true;
     });
 
     $scope.logout = function () {
         SecurityManager.logout();
         $scope.isUserAuthenticated = false;
-        $state.go('login');
-        localStorage['user.isAuthenticated'] = false;
+        $state.go('login');        
+        localStorage.removeItem('user.isAuthenticated');
 }
 });

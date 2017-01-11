@@ -1,6 +1,6 @@
 ﻿using Schools.Web.Utils;
-using System.Web.Http;
 using System.Web.Mvc;
+using Schools.Data.Repositories;
 
 namespace Schools.Web.Controllers
 {
@@ -9,7 +9,10 @@ namespace Schools.Web.Controllers
     {
         public JsonResult LogIn()
         {
-            return Json("ok", JsonRequestBehavior.AllowGet);
+            using (var userRepository = new UserRepository())
+            {
+                return Json(userRepository.GetAccountType(User.Identity.Name), JsonRequestBehavior.AllowGet);
+            }            
         }
     }
 }
