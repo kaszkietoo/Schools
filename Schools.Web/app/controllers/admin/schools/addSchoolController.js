@@ -1,4 +1,4 @@
-﻿schoolsModule.controller("addSchoolController", function ($scope, $http) {
+﻿schoolsModule.controller("addSchoolController", function ($scope, $http) {    
 
     $scope.addSchool = function (school) {       
 

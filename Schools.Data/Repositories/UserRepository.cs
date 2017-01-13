@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Schools.Data.DTO;
 
 namespace Schools.Data.Repositories
 {
@@ -20,6 +21,11 @@ namespace Schools.Data.Repositories
         public AccountType GetAccountType(string username)
         {
             return _dbContext.Users.Single(u => u.Email == username).AccountType;
+        }
+
+        public void Add(UserDTO user)
+        {
+            _dbContext.Users.Add(new Entities.User(user.Name, user.Surname, user.Email, user.AccountType));
         }
     }
 }

@@ -17,5 +17,6 @@ namespace Schools.Data.DTO
         public string Email { get; set; }
         public string Telephone { get; set; }
         public string Director { get; set; }
+        public long Id { get; set; }
     }
 }

@@ -52,6 +52,7 @@
     <Compile Include="AccountType.cs" />
     <Compile Include="ApplicationDbContext.cs" />
     <Compile Include="DTO\SchoolDTO.cs" />
+    <Compile Include="DTO\UserDTO.cs" />
     <Compile Include="Entities\School.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Migrations\201701111005022_AccountTypeAddedToUser.cs" />

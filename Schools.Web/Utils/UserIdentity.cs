@@ -17,7 +17,7 @@ namespace Schools.Web.Utils
         {
             get
             {
-                throw new NotImplementedException();
+                return "token";
             }
         }
 
@@ -25,7 +25,7 @@ namespace Schools.Web.Utils
         {
             get
             {
-                throw new NotImplementedException();
+                return Name != null;
             }
         }
 

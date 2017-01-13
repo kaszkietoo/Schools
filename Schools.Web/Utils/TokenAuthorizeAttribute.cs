@@ -1,4 +1,5 @@
-﻿using Schools.Data.Utils;
+﻿using Schools.Data;
+using Schools.Data.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,18 @@ namespace Schools.Web.Utils
     public class TokenAuthorizeAttribute : AuthorizeAttribute
     {
         private const string _securityToken = "token";
+        private AccountType _accountType = AccountType.All;
+
+        public TokenAuthorizeAttribute()
+        {
+            
+        }
+
+        public TokenAuthorizeAttribute(AccountType accountType)
+        {
+            _accountType = accountType;            
+        }
+
         public override void OnAuthorization(AuthorizationContext filterContext)
         {
             if (Authorize(filterContext))
@@ -30,7 +43,7 @@ namespace Schools.Web.Utils
             {                
                 HttpRequestBase request = actionContext.RequestContext.HttpContext.Request;
                 string token = request.Params[_securityToken];
-                bool isTokenValid = SecurityManager.IsTokenValid(token, CommonManager.GetIP(request), request.UserAgent);
+                bool isTokenValid = SecurityManager.IsTokenValid(token, CommonManager.GetIP(request), request.UserAgent, _accountType);
                 if (isTokenValid)
                 {
                     string key = Encoding.UTF8.GetString(Convert.FromBase64String(token));

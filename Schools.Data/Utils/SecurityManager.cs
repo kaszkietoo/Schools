@@ -38,7 +38,7 @@ namespace Schools.Data.Utils
             }
         }
 
-        public static bool IsTokenValid(string token, string ip, string userAgent)
+        public static bool IsTokenValid(string token, string ip, string userAgent, AccountType accountType)
         {
             bool result = false;
             try
@@ -60,8 +60,12 @@ namespace Schools.Data.Utils
                         {
                             if ((user = dbContext.Users.SingleOrDefault(u => u.Email == username)) != null)
                             {
-                                string computedToken = GenerateToken(username, user.PasswordHash, ip, userAgent, ticks);
-                                result = (token == computedToken);
+                                if (user.AccountType == accountType || accountType == AccountType.All)
+                                {
+                                    string computedToken = GenerateToken(username, user.PasswordHash, ip, userAgent, ticks);
+
+                                    result = (token == computedToken);
+                                }                                
                             }
                         }                        
                     }

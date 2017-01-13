@@ -1,4 +1,4 @@
-﻿var schoolsModule = angular.module("schools", ['ui.router']);
+﻿var schoolsModule = angular.module("schools", ['ui.router', 'ngDialog']);
 
 schoolsModule.config(function ($stateProvider) {
     var loginState = {

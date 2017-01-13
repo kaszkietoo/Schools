@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <div>
+        Dodaj nauczyciela
+        <form name="teacherForm" ng-submit="addTeacher(teacher)" novalidate>
+            <label>Imię:</label> <input name="name" required type="text" ng-model="teacher.name" /><br />
+            <p ng-show="teacherForm.name.$invalid">Musisz podać imię</p>
+            <label>Nazwisko: </label><input name="surname" required type="text" ng-model="teacher.surname" /><br />
+            <p ng-show="teacherForm.surname.$invalid">Musisz podać nazwisko</p>
+            <label>Email: </label><input name="email" required type="email" ng-model="teacher.email" /><br />
+            <p ng-show="teacherForm.email.$invalid">Musisz podać prawidłowy email</p>            
+            <input type="submit" ng-disabled="teacherForm.$invalid" value="Dodaj" />
+        </form>
+    </div>  
+</body>
+</html>

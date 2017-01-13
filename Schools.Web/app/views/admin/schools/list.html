@@ -4,8 +4,10 @@
     <title></title>
 	<meta charset="utf-8" />
 </head>
-<body>
-    schools
+<body>    
+    <div ng-controller="listSchoolsController">
+        <div ng-repeat="school in schools">{{school.Name}} <input type="button" value="Dodaj nauczyciela" ng-click="open(school.Id)" /> </div>
+    </div>
     <a ui-sref="addSchool">Dodaj szkołę</a>
 </body>
 </html>

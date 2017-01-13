@@ -173,7 +173,10 @@
   <ItemGroup>
     <Content Include="app\app.js" />
     <Content Include="app\controllers\aboutController.js" />
+    <Content Include="app\controllers\admin\teachers\addTeacherController.js" />
+    <Content Include="app\views\admin\teachers\add.html" />
     <Content Include="app\controllers\admin\schools\addSchoolController.js" />
+    <Content Include="app\controllers\admin\schools\listSchoolsController.js" />
     <Content Include="app\controllers\indexController.js" />
     <Content Include="app\controllers\home\loginController.js" />
     <Content Include="app\views\admin\schools\add.html" />

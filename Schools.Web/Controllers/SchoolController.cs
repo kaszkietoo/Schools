@@ -5,7 +5,7 @@ using System.Web.Mvc;
 
 namespace Schools.Web.Controllers
 {
-    [TokenAuthorize]
+    [TokenAuthorize(Data.AccountType.Admin)]
     public class SchoolController : Controller
     {        
         [HttpPost]
@@ -17,6 +17,14 @@ namespace Schools.Web.Controllers
             }
 
             return Json("ok");
+        }
+
+        public JsonResult GetAll()
+        {
+            using (var schoolRepository = new SchoolRepository())
+            {
+                return Json(schoolRepository.GetAll(), JsonRequestBehavior.AllowGet);
+            }                                        
         }
     }
 }

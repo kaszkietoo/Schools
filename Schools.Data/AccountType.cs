@@ -8,6 +8,6 @@ namespace Schools.Data
 {
     public enum AccountType
     {
-        Admin, Teacher
+        Admin, Teacher, All
     }
 }
