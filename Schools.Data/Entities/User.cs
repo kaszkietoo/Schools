@@ -4,7 +4,7 @@ namespace Schools.Data.Entities
 {
     public class User
     {
-        public User()
+        protected User()
         {
 
         }

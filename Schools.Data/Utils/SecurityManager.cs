@@ -25,8 +25,19 @@ namespace Schools.Data.Utils
                 hashRight = string.Join(":", new string[] { username, ticks.ToString() });
             }
             return Convert.ToBase64String(Encoding.UTF8.GetBytes(string.Join(":", hashLeft, hashRight)));
-        }        
-                
+        }
+
+        public static string GetHashedPassword(string password)
+        {
+            string key = string.Join(":", new string[] { password, _salt });
+            using (HMAC hmac = HMACSHA256.Create(_alg))
+            {                
+                hmac.Key = Encoding.UTF8.GetBytes(_salt);
+                hmac.ComputeHash(Encoding.UTF8.GetBytes(key));
+                return Convert.ToBase64String(hmac.Hash);
+            }
+        }
+
         public static bool IsTokenValid(string token, string ip, string userAgent)
         {
             bool result = false;
