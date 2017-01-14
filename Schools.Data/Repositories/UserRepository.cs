@@ -25,7 +25,8 @@ namespace Schools.Data.Repositories
 
         public void Add(UserDTO user)
         {
-            _dbContext.Users.Add(new Entities.User(user.Name, user.Surname, user.Email, user.AccountType));
+            var newUser = new Entities.User(user.Name, user.Surname, user.Email, user.AccountType, user.SchoolId);            
+            _dbContext.Users.Add(newUser);
         }
     }
 }

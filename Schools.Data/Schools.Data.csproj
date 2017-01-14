@@ -67,6 +67,10 @@
     <Compile Include="Migrations\201701111557363_DirectorAddedToSchool.Designer.cs">
       <DependentUpon>201701111557363_DirectorAddedToSchool.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701131611491_SchoolIdAddedToUser.cs" />
+    <Compile Include="Migrations\201701131611491_SchoolIdAddedToUser.Designer.cs">
+      <DependentUpon>201701131611491_SchoolIdAddedToUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repositories\SchoolRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Utils\SecurityManager.cs" />
@@ -93,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701111557363_DirectorAddedToSchool.resx">
       <DependentUpon>201701111557363_DirectorAddedToSchool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701131611491_SchoolIdAddedToUser.resx">
+      <DependentUpon>201701131611491_SchoolIdAddedToUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
