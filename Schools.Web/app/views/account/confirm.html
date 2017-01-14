@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <div ng-controller="confirmAccountController">
+        Dodaj hasło
+        <form name="passwordForm" ng-submit="addPassword(password)" novalidate>
+            <label>Hasło:</label> <input name="password" required type="password" ng-model="password.password" /><br />
+            <p ng-show="passwordForm.password.$invalid">Musisz podać hasło</p>
+            <label>Potwierdź hasło: </label><input name="confirmedPassword" required type="password" ng-model="password.confirmedPassword" /><br />
+            <p ng-show="passwordForm.confirmedPassword.$invalid">Musisz potwierdzić hasło</p>            
+            <input type="submit" ng-disabled="passwordForm.$invalid" value="Zapisz" />
+        </form>
+    </div>   
+</body>
+</html>

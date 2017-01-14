@@ -27,6 +27,12 @@ namespace Schools.Data.Utils
             return Convert.ToBase64String(Encoding.UTF8.GetBytes(string.Join(":", hashLeft, hashRight)));
         }
 
+        public static EmailConfirmationPair GenerateEmailConfirmationCode(string email)
+        {
+            var code = Guid.NewGuid().ToString().Replace('-', ' ');
+            return new EmailConfirmationPair { ValueToSend = Convert.ToBase64String(Encoding.UTF8.GetBytes(string.Join(":", new string[] { email, code }))), Code = code };
+        }
+
         public static string GetHashedPassword(string password)
         {
             string key = string.Join(":", new string[] { password, _salt });
@@ -64,7 +70,7 @@ namespace Schools.Data.Utils
                                 {
                                     string computedToken = GenerateToken(username, user.PasswordHash, ip, userAgent, ticks);
 
-                                    result = (token == computedToken);
+                                    result = (token == computedToken && user.EmailConfirmed);
                                 }                                
                             }
                         }                        

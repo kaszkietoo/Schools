@@ -25,8 +25,26 @@ namespace Schools.Data.Repositories
 
         public void Add(UserDTO user)
         {
-            var newUser = new Entities.User(user.Name, user.Surname, user.Email, user.AccountType, user.SchoolId);            
+            var newUser = new Entities.User(user.Name, user.Surname, user.Email, user.AccountType, user.SchoolId, user.EmailConfirmationCode);                        
             _dbContext.Users.Add(newUser);
+            _dbContext.SaveChanges();
+        }
+
+        public bool ConfirmEmail(string code, string passwordHash, string username)
+        {
+            var user = _dbContext.Users.Single(u => u.Email == username);
+            if (user != null)
+            {
+                if (user.EmailConfirmationCode == code)
+                {
+                    user.SetPasswordHash(passwordHash);
+                    user.ConfirmEmail();
+                    _dbContext.SaveChanges();
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

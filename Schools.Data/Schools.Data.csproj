@@ -73,6 +73,7 @@
     </Compile>
     <Compile Include="Repositories\SchoolRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Utils\EmailConfirmationPair.cs" />
     <Compile Include="Utils\SecurityManager.cs" />
     <Compile Include="Migrations\201701091333122_InitialMigration.cs" />
     <Compile Include="Migrations\201701091333122_InitialMigration.Designer.cs">

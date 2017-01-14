@@ -13,5 +13,6 @@ namespace Schools.Data.DTO
         public string Email { get; set; }
         public AccountType AccountType { get; set; }
         public long SchoolId { get; set; }
+        public string EmailConfirmationCode { get; set; }
     }
 }

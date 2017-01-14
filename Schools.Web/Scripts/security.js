@@ -4,6 +4,11 @@
     key: localStorage['SecurityManager.key'],
     ip: null,
 
+    getHashedPassword: function(password) {
+        return CryptoJS.enc.Base64.stringify(CryptoJS.HmacSHA256([ password, SecurityManager.salt].join(':'), SecurityManager.salt));        
+    
+    },
+
     generate: function (username, password) {
         // Generates a token to be used for API calls. The first time during authentication, pass in a username/password. All subsequent calls can simply omit username and password, as the same token key (hashed password) will be used.
         if (username && password) {

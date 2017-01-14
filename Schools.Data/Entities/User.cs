@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Schools.Data.Entities
@@ -10,7 +11,7 @@ namespace Schools.Data.Entities
 
         }
 
-        public User(string name, string surname, string email, AccountType accountType, long schoolId)
+        public User(string name, string surname, string email, AccountType accountType, long schoolId, string emailConfirmationCode)
         {
             EmailConfirmed = false;
             Name = name;
@@ -18,6 +19,7 @@ namespace Schools.Data.Entities
             Email = email;
             AccountType = accountType;
             SchoolId = schoolId;
+            EmailConfirmationCode = emailConfirmationCode;
         }
 
         [Key]
@@ -38,6 +40,13 @@ namespace Schools.Data.Entities
         public string PasswordHash { get; protected set; }
         public string ResetPasswordCode { get; protected set; }
         public string EmailConfirmationCode { get; protected set; }
+
+        public void ConfirmEmail()
+        {
+            EmailConfirmationCode = null;
+            EmailConfirmed = true;
+        }
+
         public bool EmailConfirmed { get; protected set; }       
         public long? SchoolId { get; set; }        
     }

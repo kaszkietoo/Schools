@@ -6,6 +6,7 @@
 <script src="~/app/controllers/admin/schools/listSchoolsController.js"></script>
 <script src="~/app/controllers/admin/schools/addSchoolController.js"></script>
 <script src="~/app/controllers/admin/teachers/addTeacherController.js"></script>
+<script src="~/app/controllers/account/confirmAccountController.js"></script>
 <script src="~/app/controllers/indexController.js"></script>
 <div class="container" ng-controller="indexController">
     <div class="navbar navbar-default">
@@ -13,7 +14,7 @@
             <ul class="nav navbar-nav">
                 <li class="navbar-brand" ng-show="!isUserAuthenticated"><a ui-sref="login">Zaloguj się</a></li>
                 <li class="navbar-brand" ng-show="isUserAuthenticated">Witaj {{username}}<input ng-click="logout()" type="submit" value="Wyloguj się" /></li>
-                <li class="navbar-brand"><a ui-sref="about">O aplikacji i autorach</a></li>
+                <li class="navbar-brand"><a ui-sref="about">O aplikacji i autorach</a></li>                
             </ul>
             <ui-view></ui-view>
         </div>

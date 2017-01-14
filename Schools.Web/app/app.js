@@ -16,19 +16,24 @@ schoolsModule.config(function ($stateProvider) {
     var schoolListState = {
         name: 'schools',
         url: '/admin/schools',
-        templateUrl: '/app/views/admin/schools/list.html',
-        params: { needsAdmin: true }
+        templateUrl: '/app/views/admin/schools/list.html'        
     };
 
     var addSchoolsState = {
         name: 'addSchool',
         url: '/admin/schools/add',
-        templateUrl: '/app/views/admin/schools/add.html',
-        params: { needsAdmin: true }
+        templateUrl: '/app/views/admin/schools/add.html'        
+    };
+
+    var confirmAccountState = {
+        name: 'confirmAccount',
+        url: '/account/confirm:code',
+        templateUrl: '/app/views/account/confirm.html'
     };
 
     $stateProvider.state(loginState);
     $stateProvider.state(aboutState);
     $stateProvider.state(schoolListState);
     $stateProvider.state(addSchoolsState);
+    $stateProvider.state(confirmAccountState);
 });
