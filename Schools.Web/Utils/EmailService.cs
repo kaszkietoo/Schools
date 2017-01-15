@@ -20,7 +20,7 @@ namespace Schools.Web.Utils
 
             SmtpServer.UseDefaultCredentials = false;
             SmtpServer.Port = 587;
-            SmtpServer.Credentials = new System.Net.NetworkCredential("mdomagal@hotmail.com", "Bobrovian0s9116");
+            SmtpServer.Credentials = new System.Net.NetworkCredential("mdomagal@hotmail.com", "***********");
             SmtpServer.EnableSsl = true;
 
             SmtpServer.Send(mail);
