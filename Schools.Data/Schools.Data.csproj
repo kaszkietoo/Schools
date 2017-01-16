@@ -51,9 +51,17 @@
   <ItemGroup>
     <Compile Include="AccountType.cs" />
     <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="DTO\ClassDTO.cs" />
     <Compile Include="DTO\SchoolDTO.cs" />
+    <Compile Include="DTO\ScoreDTO.cs" />
+    <Compile Include="DTO\StudentDTO.cs" />
+    <Compile Include="DTO\SubjectDTO.cs" />
     <Compile Include="DTO\UserDTO.cs" />
+    <Compile Include="Entities\Class.cs" />
     <Compile Include="Entities\School.cs" />
+    <Compile Include="Entities\Score.cs" />
+    <Compile Include="Entities\Student.cs" />
+    <Compile Include="Entities\Subject.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Migrations\201701111005022_AccountTypeAddedToUser.cs" />
     <Compile Include="Migrations\201701111005022_AccountTypeAddedToUser.Designer.cs">
@@ -71,7 +79,19 @@
     <Compile Include="Migrations\201701131611491_SchoolIdAddedToUser.Designer.cs">
       <DependentUpon>201701131611491_SchoolIdAddedToUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701161139143_NewEntitiesAdded.cs" />
+    <Compile Include="Migrations\201701161139143_NewEntitiesAdded.Designer.cs">
+      <DependentUpon>201701161139143_NewEntitiesAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701161322002_StudentNumberAddedToEntity.cs" />
+    <Compile Include="Migrations\201701161322002_StudentNumberAddedToEntity.Designer.cs">
+      <DependentUpon>201701161322002_StudentNumberAddedToEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\ClassRepository.cs" />
     <Compile Include="Repositories\SchoolRepository.cs" />
+    <Compile Include="Repositories\ScoreRepository.cs" />
+    <Compile Include="Repositories\StudentRepository.cs" />
+    <Compile Include="Repositories\SubjectRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Utils\EmailConfirmationPair.cs" />
     <Compile Include="Utils\SecurityManager.cs" />
@@ -101,6 +121,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701131611491_SchoolIdAddedToUser.resx">
       <DependentUpon>201701131611491_SchoolIdAddedToUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701161139143_NewEntitiesAdded.resx">
+      <DependentUpon>201701161139143_NewEntitiesAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701161322002_StudentNumberAddedToEntity.resx">
+      <DependentUpon>201701161322002_StudentNumberAddedToEntity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

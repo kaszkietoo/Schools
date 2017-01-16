@@ -1,5 +1,6 @@
 ﻿using Schools.Data.DTO;
 using Schools.Data.Repositories;
+using Schools.Web.Models;
 using Schools.Web.Utils;
 using System.Web.Mvc;
 
@@ -9,11 +10,22 @@ namespace Schools.Web.Controllers
     public class SchoolController : Controller
     {        
         [HttpPost]
-        public JsonResult Add(SchoolDTO school)
+        public JsonResult Add(SchoolModel school)
         {
             using (var schoolRepository = new SchoolRepository())
             {
-                schoolRepository.Add(school);
+                schoolRepository.Add(new SchoolDTO
+                {
+                    City = school.City,
+                    Director = school.Director,
+                    Email = school.Email,
+                    Name = school.Name,
+                    NIP = school.NIP,
+                    Number = school.Number,
+                    PostalCode = school.PostalCode,
+                    Street = school.Street,
+                    Telephone = school.Telephone
+                });
             }
 
             return Json("ok");

@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <div>
+        Dodaj klasę
+        <form name="classForm" ng-submit="addClass(class)" novalidate>
+            <label>Nazwa:</label> <input name="name" required type="text" ng-model="class.name" /><br />
+            <p ng-show="classForm.name.$invalid">Musisz podać nazwę</p>            
+            <input type="submit" ng-disabled="classForm.$invalid" value="Dodaj" />
+        </form>
+    </div>  
+</body>
+</html>

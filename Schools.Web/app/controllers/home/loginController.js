@@ -10,6 +10,10 @@
                 $state.go('schools');
             }
 
+            if (data.data === 'Teacher') {
+                $state.go('classes');
+            }
+
 
         }, function () {
             $scope.username = ""; $scope.password = "";

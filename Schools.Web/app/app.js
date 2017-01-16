@@ -31,9 +31,16 @@ schoolsModule.config(function ($stateProvider) {
         templateUrl: '/app/views/account/confirm.html'
     };
 
+    var classesState = {
+        name: 'classes',
+        url: '/dashboard',
+        templateUrl: '/app/views/dashboard/classes/list.html'
+    };
+
     $stateProvider.state(loginState);
     $stateProvider.state(aboutState);
     $stateProvider.state(schoolListState);
     $stateProvider.state(addSchoolsState);
     $stateProvider.state(confirmAccountState);
+    $stateProvider.state(classesState);
 });

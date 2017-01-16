@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <div ng-controller="listClassesController">
+        <div ng-repeat="class in classes">
+            {{class.Name}}
+            <div ng-repeat="student in class.Students">
+                {{student.Number}} {{student.Name}} {{student.Surname}}
+                <div ng-repeat="score in student.Scores">
+                    {{score.Subject}} {{score.FinalScore}}
+                </div>
+                <input type="button" value="Dodaj ocenę" ng-click="openAddingScore(student.Id)" />
+            </div>
+            <input type="button" value="Dodaj ucznia" ng-click="openAddingStudent(class.Id)" />
+        </div>             
+        <input type="button" value="Dodaj klasę" ng-click="open()" />
+    </div>
+</body>
+</html>

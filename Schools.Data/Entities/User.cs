@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -48,6 +49,7 @@ namespace Schools.Data.Entities
         }
 
         public bool EmailConfirmed { get; protected set; }       
-        public long? SchoolId { get; set; }        
+        public long? SchoolId { get; set; }
+        public virtual ICollection<Class> Classes { get; protected set; }
     }
 }

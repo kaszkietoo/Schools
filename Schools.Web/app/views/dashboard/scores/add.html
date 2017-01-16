@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    Dodaj ocenę
+    <form name="scoreForm" ng-submit="addScore(score)" novalidate>
+        <label>Przedmiot: </label><select ng-model="score.SubjectId"><option ng-repeat="subject in subjects" value="{{subject.Id}}">{{subject.Name}}</option></select><br />
+        <p ng-show="studentForm.email.$invalid">Musisz podać prawidłowy nr w dzienniku</p>
+        <label>Ocena:</label><select ng-model="score.FinalScore">
+                                 <option value="celujący">celujący</option>
+                                 <option value="bardzo dobry">bardzo dobry</option>
+                                 <option value="dobry">dobry</option>
+                                 <option value="dostateczny">dostateczny</option>
+                                 <option value="dopuszczający">dopuszczający</option>
+                                 <option value="niedostateczny">niedostateczny</option>
+        </select><br />
+        <p ng-show="studentForm.name.$invalid">Musisz podać ocenę</p>        
+        <input type="submit" ng-disabled="scoreForm.$invalid" value="Dodaj" />
+    </form>
+</body>
+</html>
