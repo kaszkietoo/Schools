@@ -12,6 +12,12 @@
                 resolve: {
                     schoolId: function () {
                         return schoolId;
+                    },
+                    dialog: function() {
+                        return ngDialog;
+                    },
+                    scope: function() {
+                        return $scope;
                     }
                 }
             })
