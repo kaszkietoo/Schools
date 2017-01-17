@@ -1,4 +1,4 @@
-﻿schoolsModule.controller("addSchoolController", function ($scope, $http) {
+﻿schoolsModule.controller("addSchoolController", function ($scope, $http, scope, dialog) {
 
     $scope.addSchool = function (school) {       
 
@@ -6,6 +6,7 @@
 
             $http.get('/school/getall?token=' + SecurityManager.generate()).then(function (data) {
                 scope.schools = data.data;
+                dialog.close();
             }, function (data) {
             })
 
