@@ -7,14 +7,14 @@ namespace Schools.Web.Models
 {
     public class SchoolModel
     {
-        public string City { get; internal set; }
-        public string Director { get; internal set; }
-        public string Email { get; internal set; }
-        public string Name { get; internal set; }
-        public string NIP { get; internal set; }
-        public string Number { get; internal set; }
-        public string PostalCode { get; internal set; }
-        public string Street { get; internal set; }
-        public string Telephone { get; internal set; }
+        public string City { get; set; }
+        public string Director { get; set; }
+        public string Email { get; set; }
+        public string Name { get; set; }
+        public string NIP { get; set; }
+        public string Number { get; set; }
+        public string PostalCode { get; set; }
+        public string Street { get; set; }
+        public string Telephone { get; set; }
     }
 }
