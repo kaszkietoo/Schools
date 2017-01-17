@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Schools.Data.DTO
 {
@@ -18,5 +14,6 @@ namespace Schools.Data.DTO
         public string Telephone { get; set; }
         public string Director { get; set; }
         public long Id { get; set; }
+        public IEnumerable<TeacherDTO> Teachers { get; set; }
     }
 }

@@ -6,8 +6,17 @@
 </head>
 <body>    
     <div ng-controller="listSchoolsController">
-        <div ng-repeat="school in schools">{{school.Name}} <input type="button" value="Dodaj nauczyciela" ng-click="open(school.Id)" /> </div>
+        <div ng-repeat="school in schools">{{school.Name}}
+        <div ng-repeat="teacher in school.Teachers">
+            {{teacher.Name}} {{teacher.Surname}} {{teacher.Email}} {{teacher.IsActive}}
+            <div ng-repeat="class in teacher.Classes">
+                {{class.Name}}
+            </div>
+        </div>
+         <input type="button" value="Dodaj nauczyciela" ng-click="open(school.Id)" /> 
+        </div>
+        <input type="button" value="Dodaj szkołę" ng-click="openAddingSchool()" />
     </div>
-    <a ui-sref="addSchool">Dodaj szkołę</a>
+    
 </body>
 </html>

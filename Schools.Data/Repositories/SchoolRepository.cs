@@ -38,8 +38,18 @@ namespace Schools.Data.Repositories
                 PostalCode = s.Number,
                 Street = s.Street,
                 Telephone = s.Telephone,
-                Id = s.Id
-            }).ToList();         
+                Id = s.Id,
+                Teachers = _dbContext.Users.Where(u => u.SchoolId == s.Id)
+                .Select(u => new TeacherDTO
+                {
+                    Name = u.Name,
+                    Surname = u.Surname,
+                    Email = u.Email,
+                    IsActive = u.EmailConfirmed ? "Tak" : "Nie",
+                    Classes = u.Classes.Select(c => new ClassDTO { Id = c.Id, Name = c.Name }).ToList()
+                })
+                .ToList()
+            }).ToList();
         }
-    }
+    }    
 }

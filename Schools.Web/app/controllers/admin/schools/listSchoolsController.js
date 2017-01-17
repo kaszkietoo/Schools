@@ -16,6 +16,13 @@
                 }
             })
         }
+
+        $scope.openAddingSchool = function () {
+            ngDialog.open({
+                templateUrl: '/app/views/admin/schools/add.html',
+                controller: 'addSchoolController'                
+            })
+        }
         
 
 });
