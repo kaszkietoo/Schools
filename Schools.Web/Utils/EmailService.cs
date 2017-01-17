@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mail;
-using System.Web;
+﻿using System.Net.Mail;
 
 namespace Schools.Web.Utils
 {
@@ -11,16 +7,16 @@ namespace Schools.Web.Utils
         public static void SendEmailConfirmationCode(string emailConfirmationCode, string email, string baseUrl)
         {
             MailMessage mail = new MailMessage();
-            SmtpClient SmtpServer = new SmtpClient("smtp.live.com");
+            SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
-            mail.From = new MailAddress("mdomagal@hotmail.com");
+            mail.From = new MailAddress("kaszkietoo@gmail.com");
             mail.To.Add(email);
             mail.Subject = "Test Mail";
             mail.Body = baseUrl + "#!/account/confirm:" + emailConfirmationCode;
 
             SmtpServer.UseDefaultCredentials = false;
             SmtpServer.Port = 587;
-            SmtpServer.Credentials = new System.Net.NetworkCredential("mdomagal@hotmail.com", "***********");
+            SmtpServer.Credentials = new System.Net.NetworkCredential("kaszkietoo@gmail.com", "***********");
             SmtpServer.EnableSsl = true;
 
             SmtpServer.Send(mail);
