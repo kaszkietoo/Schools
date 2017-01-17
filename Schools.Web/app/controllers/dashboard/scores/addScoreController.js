@@ -1,4 +1,4 @@
-﻿schoolsModule.controller("addScoreController", function ($scope, $http, studentId) {
+﻿schoolsModule.controller("addScoreController", function ($scope, $http, studentId, $state, dialog, scope) {
 
     $http.get('/subject/getall?token=' + SecurityManager.generate()).then(function (data) {
         $scope.subjects = data.data;
@@ -7,9 +7,18 @@
 
     $scope.addScore = function (score) {
 
-        score.StudentId = studentId;        
+        score.StudentId = studentId;
 
         $http.post('/score/add?token=' + SecurityManager.generate(), score).then(function (data) {
+
+            $http.get('/class/getallforuser?token=' + SecurityManager.generate()).then(function (data) {
+                scope.classes = data.data;
+            }, function (data) {
+            })
+
+            dialog.close();
+            
+
 
         }, function () {
 

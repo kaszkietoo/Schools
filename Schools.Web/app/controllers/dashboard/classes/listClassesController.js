@@ -1,8 +1,7 @@
 ﻿schoolsModule.controller("listClassesController", function ($scope, ngDialog, $http) {
 
     $http.get('/class/getallforuser?token=' + SecurityManager.generate()).then(function (data) {
-        $scope.classes = data.data;
-        console.log(data.data);
+        $scope.classes = data.data;        
     }, function (data) {
     })
 
@@ -10,7 +9,15 @@
     $scope.open = function () {
         ngDialog.open({
             templateUrl: '/app/views/dashboard/classes/add.html',
-            controller: 'addClassController'            
+            controller: 'addClassController',
+            resolve: {                
+                dialog: function () {
+                    return ngDialog;
+                },
+                scope: function () {
+                    return $scope;
+                }
+            }
         })
     }
 
@@ -21,6 +28,12 @@
             resolve: {
                 classId: function () {
                     return classId;
+                },
+                dialog: function () {
+                    return ngDialog;
+                },
+                scope: function () {
+                    return $scope;
                 }
             }
         })
@@ -33,6 +46,12 @@
             resolve: {
                 studentId: function () {
                     return studentId;
+                },
+                dialog: function () {
+                    return ngDialog;
+                },
+                scope: function () {
+                    return $scope;
                 }
             }
         })
